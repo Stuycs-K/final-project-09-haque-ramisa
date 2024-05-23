@@ -12,8 +12,8 @@ public class RSAbuiltin{
     PublicKey publicKey = pair.getPublic();
 
     // writing pub key into file
-    try (FileOutputStream fos = new FileOutputStream("public.key")) {
-      fos.write(publicKey.getEncoded());
+    try (FileOutputStream output = new FileOutputStream("public.key")) {
+      output.write(publicKey.getEncoded());
     }
     //writing pub key bytes into file and then into byte array
     File publicKeyFile = new File("public.key");

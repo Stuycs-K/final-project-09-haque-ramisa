@@ -1,21 +1,14 @@
 # Work Log
 
-## GROUP MEMBER 1
+## Ramisa
 
-### date x
+### 05/22
 
-info
+Looked further into RSA encryption to decide the extent of my intentions.
 
-### date y
+### 05/23
 
-info
-
-
-## GROUP MEMBER 2
-
-### date x
-
-info
+Wrote a program that implements RSA encryption using built-in methods to get a better idea of next steps.
 
 ### date y
 
