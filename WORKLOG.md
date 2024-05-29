@@ -10,6 +10,6 @@ Looked further into RSA encryption to decide the extent of my intentions.
 
 Wrote a program that implements RSA encryption using built-in methods to get a better idea of next steps.
 
-### date y
+### 05/28
 
-info
+Notes on RSA for presentation, written in PRESENTATION.MD
