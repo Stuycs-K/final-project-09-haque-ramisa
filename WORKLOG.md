@@ -13,3 +13,7 @@ Wrote a program that implements RSA encryption using built-in methods to get a b
 ### 05/28
 
 Notes on RSA for presentation, written in PRESENTATION.MD
+
+### 05/29
+
+Implementation of encryption and decryption algorithms (individual class).
