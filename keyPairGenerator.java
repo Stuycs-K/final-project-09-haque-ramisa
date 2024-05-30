@@ -1,6 +1,6 @@
 import java.math.BigInteger;
 
-public class RSA_imp{
+public class keyPairGenerator{
 	public static void main(String[] args) {
 		BigInteger p = probablePrime(2048, new Random());
 		BigInteger q = probablePrime(2048, new Random());
