@@ -17,3 +17,6 @@ Notes on RSA for presentation, written in PRESENTATION.MD
 ### 05/29
 
 Implementation of encryption and decryption algorithms (individual class).
+
+### 05/30
+Code consolidated into key-generating, encode, and decode classes. Makefile created, not yet finalized. 
