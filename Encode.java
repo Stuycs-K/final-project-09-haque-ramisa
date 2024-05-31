@@ -8,9 +8,12 @@ public class Encode{
 	public static void main(String[] args) {
 		if(args[0].equals("string")){
 			String plaintext = args[1];
-			BigInteger[] key = // key from keyPairGenerator class
+			String[] key = 
+			BigInteger[] key = keyPairGenerator.keyPairGenerator();// key from keyPairGenerator class
 		} else if(args[0].equals("file")){
-
+			// reading files
+			File file = File(args[1]);
+			String file = 
 		}
 
 	}

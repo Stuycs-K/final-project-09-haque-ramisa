@@ -1,7 +1,13 @@
 import java.math.BigInteger;
 
 public class keyPairGenerator{
+
 	public static void main(String[] args) {
+		// args[0] is either public key or private key
+		// should only be one arg
+
+		BigInteger[] key;
+
 		BigInteger p = probablePrime(2048, new Random());
 		BigInteger q = probablePrime(2048, new Random());
 		BigInteger n = p.multiply(q);
@@ -15,10 +21,13 @@ public class keyPairGenerator{
 		}
 
 		if(args[0].equals("publickey")){
-			publicKey(n, e);
+			key = publicKey(n, e);
 		}else if(args[0].equals("privatekey")){
-			privateKey(n, e, z);
+			key = privateKey(n, e, z);
 		}
+
+		return key;
+
 	}
 
 	//d = e.modPow(-1, z);
@@ -32,7 +41,8 @@ public class keyPairGenerator{
 	// 	// BigInteger has a modPow(bigInt exponent, bigInt m) method that returns (this^exponent) mod m
 	// }
 
-	public static BigInteger[] publicKey(BigInteger n, BigInteger e){
+	public static BigInteger[] publicKey(BigInteger n, BigInteger e, BigInteger z){
+		// z not used here
 		BigInteger[] pubKey = new BigInteger[2];
 		pubKey[0] = n;
 		pubKey[1] = e;
