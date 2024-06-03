@@ -23,8 +23,16 @@ public class Encode{
 
 		} else if(args[0].equals("file")){
 			// reading files
-			File file = File(args[1]);
-			String file = ; // finish reading file
+			String [] args = new String[]{"publickey"};
+			BigInteger[] key = keyPairGenerator.main(args);
+			byte[] input_bytes = (Files.readAllBytes(Paths.get(args[1])));
+			BigInteger plain = new BigInteger(input_bytes);
+			BigInteger[] key = keyPairGenerator.main(args);
+
+			plain.modPow(key[1], key[0]);
+
+			byte[] encryptedBytes = plain.toByteArray();
+			String s = new String(encryptedBytes);
 		}
 
 	}
