@@ -25,8 +25,7 @@ public class keyPairGenerator{
 		}else if(args[0].equals("privatekey")){
 			key = privateKey(n, e, z);
 		}
-
-		return key;
+		returnKey(key);
 
 	}
 
@@ -40,6 +39,10 @@ public class keyPairGenerator{
 	// 	return inv;
 	// 	// BigInteger has a modPow(bigInt exponent, bigInt m) method that returns (this^exponent) mod m
 	// }
+
+	public static BigInteger[] returnKey(BigInteger[] key){
+		return key;
+	}
 
 	public static BigInteger[] publicKey(BigInteger n, BigInteger e, BigInteger z){
 		// z not used here
