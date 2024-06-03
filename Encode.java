@@ -17,7 +17,6 @@ public class Encode{
 
 			plain.modPow(key[1], key[0]); // plain should now be encrypted
 
-
 			byte[] encryptedBytes = plain.toByteArray();
 			String s = new String(encryptedBytes);
 

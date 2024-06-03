@@ -1,5 +1,5 @@
-encode: Encode.class
-	@java Encode $(ARGS)
+key: keyPairGenerator.class
+	@java keyPairGenerator $(ARGS)
 Encode.class: Encode.java
 	@javac Encode.java
 decode: Decode.class
