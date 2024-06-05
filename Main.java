@@ -15,9 +15,9 @@ public class Main{
 
 		Decoder decoder = new Decoder(privateKey);
 		String decodedText = decoder.decode("string", encodedText);
-		System.out.println(text);
-		System.out.println(encodedText);
-		System.out.println(decodedText);
+		System.out.println("plain text: " + text);
+		System.out.println("encoded text: " + encodedText);
+		System.out.println("decoded text: " + decodedText);
 
 	}
 }

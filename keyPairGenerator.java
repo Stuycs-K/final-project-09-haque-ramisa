@@ -3,13 +3,13 @@ import java.util.*;
 
 public class keyPairGenerator{
 	private static int BIT_LENGTH = 7;
-	//private static BigInteger p = BigInteger.probablePrime(BIT_LENGTH, new Random());
-	//private static BigInteger q = BigInteger.probablePrime(BIT_LENGTH, new Random());
-	private static BigInteger p = new BigInteger("11") ;
-	private static BigInteger q = new BigInteger("13") ;
+	private static BigInteger p = BigInteger.probablePrime(BIT_LENGTH, new Random());
+	private static BigInteger q = BigInteger.probablePrime(BIT_LENGTH, new Random());
+	//private static BigInteger p = new BigInteger("11") ;
+	//private static BigInteger q = new BigInteger("13") ;
 	private static BigInteger n, z;
-	//private static BigInteger e = BigInteger.probablePrime(BIT_LENGTH, new Random());
-	private static BigInteger e = new BigInteger("17") ;
+	private static BigInteger e = BigInteger.probablePrime(BIT_LENGTH, new Random());
+	//private static BigInteger e = new BigInteger("17") ;
 
 	static {
 		BigInteger[] key;
@@ -67,7 +67,8 @@ public class keyPairGenerator{
 	public static BigInteger[] privateKey(){
 		BigInteger[] privKey = new BigInteger[2];
 		privKey[0] = n;
-		privKey[1] = e.modPow((BigInteger.ZERO).subtract(BigInteger.ONE), z);
+		//privKey[1] = e.modPow((BigInteger.ZERO).subtract(BigInteger.ONE), z);
+		privKey[1] = e.modInverse(z);
 		return privKey;
 	}
 
