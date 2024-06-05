@@ -1,5 +1,7 @@
 import java.math.BigInteger;
 import java.nio.file.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 
 public class Decoder{
 	// 1st arg is "file" or "string", 
@@ -14,7 +16,8 @@ public class Decoder{
 
 	public String decode(String inputType, String text){
 		if(inputType.equalsIgnoreCase("string")){
-			byte[] textBytes = text.getBytes();
+			byte[] textBytes = text.getBytes(StandardCharsets.UTF_8);
+			//byte[] textBytes = Base64.getEncoder().encode(text.getBytes());
 			BigInteger plainInt = new BigInteger(textBytes);
 			BigInteger n = privateKey[0];
 			BigInteger d = privateKey[1];
@@ -32,7 +35,7 @@ public class Decoder{
 				BigInteger d = privateKey[1];
 				BigInteger value = plainInt.modPow(d, n); // plain should now be encrypted
 				byte[] decryptedBytes = value.toByteArray();
-				String s = new String(decryptedBytes);
+				String s = new String(decryptedBytes, StandardCharsets.UTF_8);
 				return s;
 			}catch(Exception e){
 			}	
