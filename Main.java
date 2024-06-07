@@ -31,7 +31,7 @@ public class Main{
 		System.out.println();
 
 		Encoder encoder2 = new Encoder(publicKey);
-		String text2 = "XX";
+		String text2 = "1";
 		String encodedText2 = encoder.encode("string", text2);
 		Decoder decoder2 = new Decoder(privateKey);
 		String decodedText2 = decoder.decode("string", encodedText2);
