@@ -16,9 +16,9 @@ public class Decoder{
 
 	public String decode(String inputType, String text){
 		if(inputType.equalsIgnoreCase("string")){
-			byte[] textBytes = text.getBytes(StandardCharsets.UTF_8);
+			//byte[] textBytes = text.getBytes(StandardCharsets.UTF_8);
 			//byte[] textBytes = Base64.getEncoder().encode(text.getBytes());
-			BigInteger plainInt = new BigInteger(textBytes);
+			BigInteger plainInt = new BigInteger(Base64.getDecoder().decode(text));
 			BigInteger n = privateKey[0];
 			BigInteger d = privateKey[1];
 
@@ -30,7 +30,7 @@ public class Decoder{
 		} else if(inputType.equalsIgnoreCase("file")){
 			try{
 				byte[] input_bytes = (Files.readAllBytes(Paths.get(text)));
-				BigInteger plainInt = new BigInteger(input_bytes);
+				BigInteger plainInt = new BigInteger(Base64.getDecoder().decode(input_bytes));
 				BigInteger n = privateKey[0];
 				BigInteger d = privateKey[1];
 				BigInteger value = plainInt.modPow(d, n); // plain should now be encrypted

@@ -16,14 +16,15 @@ public class Encoder{
 	// encode(file, filename) or encode(string, plaintext)
 	public String encode(String inputType, String text){
 		if(inputType.equalsIgnoreCase("string")){
-			byte[] plaintxt = text.getBytes(StandardCharsets.UTF_8);
+			//byte[] plaintxt = text.getBytes(StandardCharsets.UTF_8);
 			//byte[] plaintxt = Base64.getEncoder().encode(text.getBytes());
+			byte[] plaintxt = text.getBytes();
 			BigInteger plainInt = new BigInteger(plaintxt);
 			BigInteger n = publicKey[0];
 			BigInteger e = publicKey[1];
 			BigInteger value = plainInt.modPow(e,n); // plain should now be encrypted
 			byte[] encryptedBytes = value.toByteArray();
-			String s = new String(encryptedBytes);
+			String s = Base64.getEncoder().encodeToString(encryptedBytes);
 			return s;
 
 		} else if(inputType.equalsIgnoreCase("file")){
@@ -34,7 +35,8 @@ public class Encoder{
 				BigInteger e = publicKey[1];
 				BigInteger value = plainInt.modPow(e, n);
 				byte[] encryptedBytes = value.toByteArray();
-				String s = new String(encryptedBytes, StandardCharsets.UTF_8);
+				//String s = new String(encryptedBytes, StandardCharsets.UTF_8);
+				String s = Base64.getEncoder().encodeToString(encryptedBytes);
 				return s;
 			} catch (Exception e){
 			}

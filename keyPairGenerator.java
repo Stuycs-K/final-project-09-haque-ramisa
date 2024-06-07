@@ -2,12 +2,12 @@ import java.math.BigInteger;
 import java.util.*;
 
 public class keyPairGenerator{
-	private static int BIT_LENGTH = 7;
+	private static int BIT_LENGTH = 2048;
 	private static BigInteger p = BigInteger.probablePrime(BIT_LENGTH, new Random());
 	private static BigInteger q = BigInteger.probablePrime(BIT_LENGTH, new Random());
 	//private static BigInteger p = new BigInteger("11") ;
 	//private static BigInteger q = new BigInteger("13") ;
-	private static BigInteger n, z;
+	private static BigInteger n, z, d;
 	private static BigInteger e = BigInteger.probablePrime(BIT_LENGTH, new Random());
 	//private static BigInteger e = new BigInteger("17") ;
 
@@ -26,7 +26,7 @@ public class keyPairGenerator{
 			//gcd = e.gcd(z);
 		}
 
-		System.out.println("p="+p+"; q="+q+"; e="+e);
+		//System.out.println("p="+p+"; q="+q+"; e="+e);
 	}
 
 	public static void main(String[] args) {

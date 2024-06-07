@@ -31,13 +31,23 @@ public class Main{
 		System.out.println();
 
 		Encoder encoder2 = new Encoder(publicKey);
-		String text2 = "1";
+		String text2 = "hello world!";
 		String encodedText2 = encoder.encode("string", text2);
 		Decoder decoder2 = new Decoder(privateKey);
 		String decodedText2 = decoder.decode("string", encodedText2);
 		System.out.println("plain text2: " + text2);
 		System.out.println("encoded text2: " + encodedText2);
 		System.out.println("decoded text2: " + decodedText2);
+		System.out.println();
+
+		Encoder encoder3 = new Encoder(publicKey);
+		String text3 = "!@#$%^&*() <> ?//|*\\ thisIsA_LONG+test===";
+		String encodedText3 = encoder.encode("string", text3);
+		Decoder decoder3 = new Decoder(privateKey);
+		String decodedText3 = decoder.decode("string", encodedText3);
+		System.out.println("plain text3: " + text3);
+		System.out.println("encoded text3: " + encodedText3);
+		System.out.println("decoded text3: " + decodedText3);
 		System.out.println();
 	}
 }
