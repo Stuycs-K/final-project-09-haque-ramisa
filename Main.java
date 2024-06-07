@@ -1,4 +1,8 @@
 import java.math.BigInteger;
+import java.nio.file.*;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+
 
 public class Main{
 
@@ -48,6 +52,19 @@ public class Main{
 		System.out.println("plain text3: " + text3);
 		System.out.println("encoded text3: " + encodedText3);
 		System.out.println("decoded text3: " + decodedText3);
+		System.out.println();
+
+		Encoder encoder4 = new Encoder(publicKey);
+		try{
+			Arrays.toString(Files.readAllBytes(Paths.get("test1.txt")));
+		}catch(Exception e){
+		}
+		
+		String encodedText4 = encoder.encode("file", "test1.txt");
+		Decoder decoder4 = new Decoder(privateKey);
+		String decodedText4 = decoder.decode("string", encodedText4);
+		System.out.println("encoded text4: " + encodedText4);
+		System.out.println("decoded text4: " + decodedText4);
 		System.out.println();
 	}
 }

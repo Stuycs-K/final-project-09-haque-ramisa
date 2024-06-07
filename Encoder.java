@@ -29,6 +29,7 @@ public class Encoder{
 
 		} else if(inputType.equalsIgnoreCase("file")){
 			try{
+				//System.out.println("hi");
 				byte[] input_bytes = (Files.readAllBytes(Paths.get(text)));
 				BigInteger plainInt = new BigInteger(input_bytes);
 				BigInteger n = publicKey[0];
