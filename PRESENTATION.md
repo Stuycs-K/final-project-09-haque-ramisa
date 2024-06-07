@@ -1,5 +1,17 @@
-# This document is required.
-- RSA is named after Rivest-Shamir-Adleman
+# Rivest-Shamir-Adleman (RSA) Encryption
+
+## **ASYMMETRIC** Algorithm
+RSA encryption relies on an asymmetric algorithm, meaning that the processes for encryption and decryption are not reversible. For this specific algorithm, this relies on the creation of two separate keys– a public key used to encrypt data and a private key which is used to decrypt data.
+### Key Generation
+Each of the keys consists of the **modulus** and its own **exponent**, and is created using the following process:
+1. selecting two large prime numbers, p and q
+2. calculating their product, n, such that n = p * q *(this is the modulus)*
+3. calculating Euler's totient function, φ(n) = (p - 1) * (q - 1)
+4. choosing an integer, e, such that 1 < e < φ(n) and gcd(e, φ(n)) = 1 *(this is the public exponent)*
+5. calculating the value, d, which is the multiplicative inverse of e module φ(n) *(this is the private exponent)*
+
+  **the public key is (n, e) and the private key is (n, d)**
+
 - It is an asymmetric encryption algorithm
 - It relies on the difficulty of factoring large prime numbers.
 - It is secure because of the practical difficulty of factoring the product of two large prime numbers, aka the "factoring problem"

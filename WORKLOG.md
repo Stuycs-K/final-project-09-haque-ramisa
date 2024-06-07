@@ -29,3 +29,14 @@ Implemented the mathematical calculations to encrypt and decrypt input of both s
 
 ### 06/04
 Turned encoder and decoder into object types to consolidate code, all controlled by a new class (Main.class). Will eventually have the makefile interact with the Main class to make it more user-friendly.
+
+### 06/05
+
+### 06/07
+
+## Resources
+..* [Cryptool](https://www.cryptool.org/en/cto/rsa-step-by-step/)
+..* [TechTarget](https://www.techtarget.com/searchsecurity/definition/RSA)
+..* [GeeksforGeeks](https://www.geeksforgeeks.org/how-to-generate-large-prime-numbers-for-rsa-algorithm/)
+..* [Java Documentation: BigInteger class](https://docs.oracle.com/javase/8/docs/api/java/math/BigInteger.html)
+..* [CS CMU Byte Encodings and Strings](https://www.cs.cmu.edu/afs/cs.cmu.edu/user/gchen/www/download/java/JavaTutorial/i18n/text/string.html)
