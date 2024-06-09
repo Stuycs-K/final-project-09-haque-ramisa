@@ -14,18 +14,22 @@ public class Main{
 		// args[2] will be text or filename
 
 		Encoder encoder = new Encoder(publicKey);
+		String encodedText = "";
 		if(args[0].equalsIgnoreCase("string")){
-			String encodedText = encoder.encode("string", args[1]);
+			encodedText = encoder.encode("string", args[1]);
 		} else if(args[0].equalsIgnoreCase("file")){
-			String encodedText = encoder.encode("file", args[1]);
-		}
+			encodedText = encoder.encode("file", args[1]);
+		} 
 		System.out.println("ENCODED TEXT: " + encodedText);
+		System.out.println();
 		System.out.println("PUBLIC KEY: " + Arrays.toString(publicKey));
-
+		System.out.println();
 		Decoder decoder = new Decoder(privateKey);
 		String decodedText = decoder.decode("string", encodedText);
 		System.out.println("DECODED TEXT: " + decodedText);
+		System.out.println();
 		System.out.println("PRIVATE KEY: " + Arrays.toString(privateKey));
+		System.out.println();
 
 		// System.out.println("Public key-- "+ publicKey[0]+" "+publicKey[1]);
 		// System.out.println("Private key-- "+ privateKey[0]+" "+privateKey[1]);

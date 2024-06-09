@@ -1,12 +1,8 @@
-encode: Main.class
+go: Main.class
 	@javac keyPairGenerator.java
 	@javac Encoder.java
 	@javac Decoder.java
-	@java Main $(ARGS)
-decode: Main.class
-	@javac keyPairGenerator.java
-	@javac Encoder.java
-	@javac Decoder.java
+	@javac Main.java
 	@java Main $(ARGS)
 Main.class: Main.java
 	@javac Main.java
