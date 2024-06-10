@@ -31,8 +31,13 @@ Implemented the mathematical calculations to encrypt and decrypt input of both s
 Turned encoder and decoder into object types to consolidate code, all controlled by a new class (Main.class). Will eventually have the makefile interact with the Main class to make it more user-friendly.
 
 ### 06/05
+Fixed code to accommodate for faulty calculation of one of the key values. Also switched to using Base64 for encoding and decoding to account for un-printable characters.
 
 ### 06/07
+Updated makefile to work with the Main class, updated presentation notes, and some more code testing.
+
+### 06/09
+Final updates to Main class and makefile, added links, finalized readme and presentation.
 
 ## Resources
 ..* [Cryptool](https://www.cryptool.org/en/cto/rsa-step-by-step/)

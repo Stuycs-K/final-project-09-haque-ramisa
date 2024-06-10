@@ -10,5 +10,5 @@ To use the program is fairly simple.
 The user must type: `make go ARGS="<arg0 arg1>"` where arg0 can be **string** or **file**, and arg1 can be **plaintext** or a **file-path** respectively.
 
 ## Links
-(Presentation video)[https://drive.google.com/file/d/13oPFEKWItWcsqa00fIaxJsltW3Aznd1B/view?usp=drive_link]
-(Example from presentation)[https://drive.google.com/file/d/1aN2abZXNPIQ4-dhLAEm23DltERYR_xtm/view?usp=drive_link]
+[Presentation video](https://drive.google.com/file/d/13oPFEKWItWcsqa00fIaxJsltW3Aznd1B/view?usp=drive_link)
+[Example from presentation](https://drive.google.com/file/d/1aN2abZXNPIQ4-dhLAEm23DltERYR_xtm/view?usp=drive_link)
