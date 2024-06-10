@@ -7,4 +7,4 @@ This program serves to demonstrate RSA encryption. The encryption and decryption
 ## Instructions
 To use the program is fairly simple.
 
-The user must type: `make go ARGS="<arg0 arg1>"` where arg0 can be **string** or **file**, and arg1 can be **plaintext** or a **filepath** respectively.
+The user must type: `make go ARGS="<arg0 arg1>"` where arg0 can be **string** or **file**, and arg1 can be **plaintext** or a **file-path** respectively.

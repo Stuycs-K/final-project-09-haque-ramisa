@@ -1,7 +1,7 @@
 # Rivest-Shamir-Adleman (RSA) Encryption
 
 ## **ASYMMETRIC** Algorithm
-RSA encryption relies on an asymmetric algorithm, meaning that the processes for encryption and decryption are not reversible. For this specific algorithm, this relies on the creation of two separate keys– a public key used to encrypt data and a private key which is used to decrypt data.
+RSA encryption relies on an asymmetric algorithm, meaning that the processes for encryption and decryption rely on the creation of two separate keys– a public key used to encrypt data and a private key which is used to decrypt data.
 ### Key Generation
 Each of the keys consists of the **modulus** and its own **exponent**, and is created using the following process:
 1. selecting two large prime numbers, p and q
@@ -10,35 +10,21 @@ Each of the keys consists of the **modulus** and its own **exponent**, and is cr
 4. choosing an integer, e, such that 1 < e < φ(n) and gcd(e, φ(n)) = 1 *(this is the public exponent)*
 5. calculating the value, d, which is the multiplicative inverse of e module φ(n) *(this is the private exponent)*
 
-  **the public key is (n, e) and the private key is (n, d)**
+  **the public key is (n, e) and the private key is (n, d)** which follow <modulus, exponent>
 
-- It is an asymmetric encryption algorithm
-- It relies on the difficulty of factoring large prime numbers.
-- It is secure because of the practical difficulty of factoring the product of two large prime numbers, aka the "factoring problem"
+### Encryption and Decryption Processes
+**Encryption** involves first raising the plaintext to the power of the public exponent and then taking the remainder when divided by the public modulus. The plaintext is converted into bytes and then converted into an integer value.
+**Decryption** involves first raising the cipher-text to the power of the private exponent and then taking the remainder when divided by the private modulus. This integer value is then converted to bytes, and then back into plaintext.
 
-- RSA keys should be chosen with a sufficiently large modulus to resist attacks
-- Common key lengths for RSA are 2048, 3072, or even 4096 bits to ensure security against current and future attacks
 
-- required a public-private key pair: the public key is used for encryption, while the private key is used for decryption
-- Encryption involves: first raising the plaintext to the power of the public exponent and then taking the remainder when divided by the public modulus
+## What are the advantages of this algorithm?
+- RSA keys are often chosen with large modulus, thus making them more **secure**. This is done by choosing values of p and q that are of at least 512 bits (results in around 1024 bit value of n). However, common key lengths are 2048, 3072, or even 4096 bits to ensure security against current and future attacks since the larger the primes, the more difficult it is to factor their product.
+- Because RSA is an asymmetric technique, it is a secure way to exchange data **without exchanging a secret key**.
 
-- Convert the plaintext message into an integer m, where 0 < m < n
-- Compute the ciphertext c as c ≡ m^e (mod n). This is done using modular exponentiation
+## What are the disadvantages of this algorithm?
+- Because of the large keys required for security, RSA encryption and decryption is not very efficient as it requires great amounts of time, computational power, and storage.
+- The key-generating process is largely random, and if the two prime numbers are too close, the algorithm is easier to solve.
 
-- Decryption involves: raising the ciphertext to the power of the private exponent and then taking the remainder when divided by the private modulus
 
-- Retrieve the ciphertext c
-- Compute the plaintext message m as m ≡ c^d (mod n). This is done using modular exponentiation
-
-- keys typically consist of a public key (containing the public exponent and modulus) and a private key (containing the private exponent and modulus)
-
-- - - generating keys
-- Select two large prime numbers, p and q
-- Calculate their product, n = p * q. This is the modulus
-- Calculate Euler's totient function, φ(n) = (p - 1) * (q - 1).
-- Choose an integer e such that 1 < e < φ(n) and gcd(e, φ(n)) = 1. This is the public exponent
-- Calculate d, the modular multiplicative inverse of e modulo φ(n), i.e., d * e ≡ 1 (mod φ(n)). This is the private exponent
-- The public key is (e, n) and the private key is (d, n).
-
-- typically used for securing data transmission, digital signatures, and secure communications over the internet to ensure message integrity and authenticity
-- secure communications protocols like HTTPS, SSH, and SSL/TLS
+## Common Usages
+The RSA algorithm is typically used for **securing data transmission**, **digital signatures**, and **secure communication protocols** like HTTPS, SSH, and SSL/TLS over the internet to ensure message integrity and authenticity.
